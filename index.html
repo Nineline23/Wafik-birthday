@@ -5,42 +5,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Birthday Wafiq</title>
     <style>
+        /* Animasi Gradien Background */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f8ff;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fad0c4, #ff9a9e);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
             color: #333;
             text-align: center;
-            padding: 20px;
+            padding: 30px;
         }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         h1 {
-            color: #ff6347; /* Tomato color */
+            font-size: 3em;
+            color: #fff;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-out;
         }
+
+        p {
+            font-size: 1.2em;
+            color: #fff;
+            animation: fadeIn 3s ease-out;
+        }
+
+        /* Efek untuk Gambar */
         img {
             max-width: 100%;
             height: auto;
-            border-radius: 10px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 20px 0;
+            animation: fadeIn 2s ease-in-out;
         }
+
+        /* Button Efek Hover */
         a {
             display: inline-block;
             margin-top: 20px;
-            padding: 10px 15px;
-            background-color: #ff6347; /* Tomato color */
+            padding: 12px 24px;
+            background-color: #ff6347;
             color: white;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 30px;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
+
         a:hover {
-            background-color: #ff4500; /* OrangeRed color */
+            background-color: #ff4500;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
         }
+
+        /* Efek Fade In */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Kontrol Audio Gaya */
+        audio {
+            margin-top: 20px;
+            outline: none;
+            animation: fadeIn 3s ease-out;
+        }
+
+        /* Hidden page styles */
         .hidden {
             display: none;
         }
     </style>
     <script>
+        // Script untuk navigasi antar halaman
         function showDetail() {
             document.getElementById('generalMessage').classList.add('hidden');
             document.getElementById('detailedMessage').classList.remove('hidden');
         }
+
         function showGeneral() {
             document.getElementById('detailedMessage').classList.add('hidden');
             document.getElementById('generalMessage').classList.remove('hidden');
@@ -48,17 +97,26 @@
     </script>
 </head>
 <body>
+    <!-- Halaman Pertama -->
     <div id="generalMessage">
         <h1>Happy Birthday, Wafiq!</h1>
-        <img src="https://drive.google.com/file/d/1qNqylWHsLbnEeYojLgytxfdnGJPKKW1Z/view?usp=drivesdk" alt="Birthday Image">
+        <p>Welcome to a special celebration! Let’s make this moment unforgettable.</p>
+
+        <!-- Gambar dengan animasi fade in -->
+        <img src="https://drive.google.com/uc?export=view&id=1q1fzGkwaEnDMaOyvN6oI-FkC0GI8f4L2" alt="Birthday Image">
+
+        <!-- Musik dengan kontrol audio -->
         <audio controls>
             <source src="https://drive.google.com/uc?export=download&id=1qICfm3tAafl9-ZxqufL9xnxg4rQ51sld" type="audio/mpeg">
             Your browser does not support the audio tag.
         </audio>
-        <p>Welcome to my birthday website. Click the button below for more heartfelt wishes!</p>
+
+        <p>Click the button below to see the heartfelt wishes.</p>
+        <!-- Button untuk ke halaman selanjutnya -->
         <a href="javascript:void(0);" onclick="showDetail()">See Detailed Wishes</a>
     </div>
 
+    <!-- Halaman Kedua -->
     <div id="detailedMessage" class="hidden">
         <h1>Heartfelt Wishes for Wafiq</h1>
         <p>Dear Wafiq,<br>
@@ -68,6 +126,7 @@
 
         <p>Maaf kalau selama ini aku belum bisa jadi pendukung yang sempurna. But please remember, no matter what, I am always here for you. My heart is with you, supporting you, wishing for your happiness, and forever cheering you on. You deserve all the love and happiness this world has to offer, and I hope to always be a part of that journey.</p>
 
+        <!-- Button untuk kembali ke halaman awal -->
         <a href="javascript:void(0);" onclick="showGeneral()">Back to Home</a>
     </div>
 </body>
